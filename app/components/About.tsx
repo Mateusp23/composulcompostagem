@@ -42,7 +42,9 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ once: true }}
-            className="bg-white rounded-xl shadow-md p-6 text-left flex flex-col gap-4"
+            whileHover={{ scale: 1.03 }}
+            className="rounded-xl p-6 text-left flex flex-col gap-4 transition-all duration-300
+              bg-white/30 backdrop-blur-md border border-white/20 shadow-md hover:shadow-xl"
           >
             <motion.div
               whileHover={{ scale: 1.1 }}
@@ -65,7 +67,7 @@ export default function About() {
       <div className="text-center mt-12">
         <Link
           href="#contato"
-          className="inline-block bg-primary hover:bg-primary/90 text-white font-roboto text-sm md:text-base px-6 py-3 rounded-full shadow hover:bg-opacity-90 transition-all"
+          className="inline-block bg-primary hover:bg-primary/90 text-white font-roboto text-sm md:text-base px-6 py-3 rounded-full shadow hover:shadow-md transition-all"
         >
           Saiba mais sobre a Composul
         </Link>
