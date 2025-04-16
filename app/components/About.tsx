@@ -69,7 +69,7 @@ export default function About() {
           href="#contato"
           className="inline-block bg-primary hover:bg-primary/90 text-white font-roboto text-sm md:text-base px-6 py-3 rounded-full shadow hover:shadow-md transition-all"
         >
-          Saiba mais sobre a Composul
+          Saiba mais
         </Link>
       </div>
     </section>
