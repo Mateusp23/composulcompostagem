@@ -1,50 +1,74 @@
-// app/components/About.tsx
 'use client';
 
 import { motion } from 'framer-motion';
+import { CheckCircle, ShieldCheck, Globe } from 'lucide-react';
+import Link from 'next/link';
 
 export default function About() {
+  const cards = [
+    {
+      icon: CheckCircle,
+      title: '12 anos de experiência',
+      text: 'Pioneiros na coleta mecanizada e compostagem de resíduos orgânicos. Produzimos fertilizante orgânico com registros oficiais no MAPA.',
+    },
+    {
+      icon: ShieldCheck,
+      title: 'Soluções com respaldo legal',
+      text: 'Atendemos diferentes setores conforme a Política Nacional de Resíduos Sólidos (Lei nº 12.305/2010), evitando passivos ambientais.',
+    },
+    {
+      icon: Globe,
+      title: 'Parceria internacional',
+      text: 'Representamos a UTV AG na América do Sul, com a tecnologia alemã GORE® COVER: alta eficiência e baixo custo no tratamento biológico.',
+    },
+  ];
+
   return (
-    <section id="sobre" className="bg-[--color-background] px-6 md:px-12 py-20">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section id="sobre" className="bg-[--color-primary]/10 px-6 md:px-12 py-20">
+      <div className="max-w-7xl mx-auto text-center mb-12">
+        <h2 className="text-title text-3xl md:text-4xl font-inter font-bold">
+          Quem Somos
+        </h2>
+        <p className="text-secondary font-roboto mt-4 max-w-2xl mx-auto">
+          Atuamos com compostagem orgânica de ponta e compromisso ambiental, aliados à inovação e respaldo técnico.
+        </p>
+      </div>
 
-        {/* Lado esquerdo: conteúdo animado */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-[--color-title] text-3xl md:text-4xl font-inter font-bold mb-6">
-            Quem Somos
-          </h2>
-          <div className="space-y-5 text-[--color-secondary] font-roboto text-base leading-relaxed">
-            <p>
-              Com mais de <strong>12 anos de história</strong>, somos pioneiros na coleta mecanizada e compostagem de resíduos orgânicos. Produzimos fertilizante orgânico composto de <strong>alta qualidade</strong>, com registros oficiais no <strong>MAPA</strong> (EP nº ... | Produto nº ...).
+      <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {cards.map((card, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-xl shadow-md p-6 text-left flex flex-col gap-4"
+          >
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+              className="w-fit"
+            >
+              <card.icon className="h-8 w-8 text-primary" />
+            </motion.div>
+            <h3 className="text-xl font-semibold text-title font-inter">
+              {card.title}
+            </h3>
+            <p className="text-secondary font-roboto leading-relaxed text-sm">
+              {card.text}
             </p>
-            <p>
-              Atendemos diversos setores geradores de resíduos, oferecendo destinação final adequada, conforme a <strong>Política Nacional de Resíduos Sólidos (Lei nº 12.305/2010)</strong>. Isso evita passivos ambientais e garante segurança jurídica aos nossos clientes.
-            </p>
-            <p>
-              Representamos a <strong>UTV AG</strong> na América do Sul — uma empresa alemã com mais de 20 anos de experiência em tratamento biológico de RSU, utilizando a avançada <strong>tecnologia GORE® COVER</strong>: controle total, alta eficiência e baixo custo operacional.
-            </p>
-          </div>
-        </motion.div>
+          </motion.div>
+        ))}
+      </div>
 
-        {/* Lado direito: imagem ou ícone animado */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="flex justify-center"
+      {/* Botão Saiba mais */}
+      <div className="text-center mt-12">
+        <Link
+          href="#contato"
+          className="inline-block bg-primary hover:bg-primary/90 text-white font-roboto text-sm md:text-base px-6 py-3 rounded-full shadow hover:bg-opacity-90 transition-all"
         >
-          <img
-            src="https://images.unsplash.com/photo-1617677916288-7a5c8e88a285?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // substitua por uma imagem sobre compostagem ou parceria
-            alt="Compostagem e sustentabilidade"
-            className="rounded-xl shadow-lg max-w-[450px] w-full object-cover"
-          />
-        </motion.div>
+          Saiba mais sobre a Composul
+        </Link>
       </div>
     </section>
   );
