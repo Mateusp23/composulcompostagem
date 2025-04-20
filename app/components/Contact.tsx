@@ -4,6 +4,8 @@ import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react
 import Image from 'next/image';
 import { FaWhatsapp } from 'react-icons/fa';
 
+import { motion } from 'framer-motion';
+
 export default function Contact() {
   return (
     <section id="contato" className="bg-white py-20 px-6">
@@ -89,6 +91,18 @@ export default function Contact() {
                 <Linkedin className="w-6 h-6" />
               </a>
             </div>
+          </div>
+
+
+          <div>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://wa.me/5548999380221?text=Olá%2C%20gostaria%20de%20falar%20com%20a%20Composul!"
+              className="inline-block bg-secondary text-white text-base font-medium px-8 py-3 rounded-full shadow-md transition-transform duration-300 mt-8"
+            >
+              Fale conosco
+            </motion.a>
           </div>
         </div>
 

@@ -7,6 +7,7 @@ import {
   FlaskConical,
   Lightbulb,
 } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Services() {
   const services = [
@@ -70,6 +71,18 @@ export default function Services() {
             </p>
           </motion.div>
         ))}
+      </div>
+
+      {/* Botão de ação */}
+      <div className="text-center mt-14">
+        <motion.a
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          href="https://wa.me/5548999380221?text=Olá%2C%20gostaria%20de%20falar%20com%20a%20Composul!"
+          className="inline-block bg-gradient-to-r from-primary to-secondary text-white text-base font-medium px-8 py-3 rounded-full shadow-md transition-transform duration-300"
+        >
+          Solicite um orçamento
+        </motion.a>
       </div>
     </section>
   );
