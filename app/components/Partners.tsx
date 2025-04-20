@@ -35,7 +35,7 @@ export default function Partners() {
                 alt={`Parceiro ${index + 1}`}
                 width={120}
                 height={60}
-                className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                className="object-contain sm:grayscale hover:grayscale-0 transition-all duration-300"
               />
             </div>
           ))}
