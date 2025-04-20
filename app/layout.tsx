@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
+
+import Navbar from "./components/Navbar";
 import "./globals.css";
+import Footer from "./components/Footer";
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -27,7 +30,11 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${inter.variable} bg-background antialiased`}
       >
-        {children}
+        <Navbar />
+        <div>
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   );
