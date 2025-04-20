@@ -3,7 +3,7 @@ import AboutUs from "./components/AboutUs";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-// import Partners from "./components/Partners";
+import Partners from "./components/Partners";
 import Services from "./components/Services";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
       <AboutUs />
       {/* <About /> */}
       <Services />
-      {/* <Partners /> */}
+      <Partners />
       <Footer />
     </>
   );
