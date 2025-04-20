@@ -10,3 +10,16 @@
   --font-inter: "Inter", sans-serif;
   --font-roboto: "Roboto", sans-serif;
 }
+
+/* Oculta a barra de rolagem, mas permite scroll */
+body {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE 10+ */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari e Opera */
+}

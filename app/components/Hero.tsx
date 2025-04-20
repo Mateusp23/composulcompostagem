@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export default function Hero() {
   return (
     <section
-      className="relative w-full min-h-[80vh] bg-cover bg-center bg-no-repeat flex items-center justify-center px-6 md:px-16 pt-10 pb-20"
+      className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center px-6 md:px-16 pt-10 pb-20"
       style={{
         backgroundImage: "url('/bg-hero.jpg')", // Certifique-se que a imagem está em public/bg-hero.jpg
       }}
@@ -33,7 +33,8 @@ export default function Hero() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="#contato"
+            target='_blank'
+            href="https://wa.me/5548999380221?text=Olá%2C%20gostaria%20de%20falar%20com%20a%20Composul!"
             className="inline-block bg-primary text-white text-base font-medium px-6 py-3 rounded-full shadow-md transition-all hover:bg-opacity-90"
           >
             Fale com a Composul

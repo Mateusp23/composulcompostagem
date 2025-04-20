@@ -1,5 +1,5 @@
-import About from "./components/About";
 import AboutUs from "./components/AboutUs";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
@@ -12,9 +12,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <AboutUs />
-      {/* <About /> */}
       <Services />
       <Partners />
+      <Contact />
       <Footer />
     </>
   );
