@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 
 export default function Contact() {
   return (
-    <section id="contato" className="bg-white py-20 px-6">
+    <section id="contato" className="bg-white py-20 px-6 scroll-mt-[80px]">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
         {/* Informações de contato */}
@@ -30,16 +30,16 @@ export default function Contact() {
             <li className="flex items-start gap-3">
               <Mail className="w-5 h-5 text-primary mt-1" />
               <a
-                href="mailto:composulcompostagem@gmail.com"
+                href="mailto:contato@composul.com"
                 className="hover:text-orange transition-colors duration-300"
               >
-                composulcompostagem@gmail.com
+                contato@composul.com
               </a>
             </li>
             <li className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-primary mt-1" />
               <a
-                href="https://www.google.com/maps/place/Servid%C3%A3o+de+Acesso+505+-+Vila+Nova,+I%C3%A7ara+-+SC,+88820-000"
+                href="https://maps.app.goo.gl/yZK4pgRTZf268BoEA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-orange transition-colors duration-300"
@@ -109,7 +109,7 @@ export default function Contact() {
         {/* Mapa */}
         <div>
           <a
-            href="https://www.google.com/maps/place/Composul/@-28.7113324,-49.3276097,17z"
+            href="https://maps.app.goo.gl/yZK4pgRTZf268BoEA"
             target="_blank"
             rel="noopener noreferrer"
             className="cursor-pointer"

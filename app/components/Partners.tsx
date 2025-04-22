@@ -7,7 +7,7 @@ const logos = Array.from({ length: 46 }, (_, i) => `/parceiros/logo_${i + 1}.png
 
 export default function Partners() {
   return (
-    <section id="parceiros" className="bg-primary/10 px-6 md:px-12 py-20 overflow-hidden">
+    <section id="parceiros" className="scroll-mt-[80px] bg-primary/10 px-6 md:px-12 py-20">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-title text-3xl md:text-4xl font-inter font-bold">
           Nossos Parceiros

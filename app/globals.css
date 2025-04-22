@@ -11,6 +11,10 @@
   --font-roboto: "Roboto", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Oculta a barra de rolagem, mas permite scroll */
 body {
   scrollbar-width: none;

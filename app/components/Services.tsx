@@ -34,7 +34,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="servicos" className="bg-background px-6 md:px-12 py-20">
+    <section id="servicos" className="bg-background px-6 md:px-12 py-20 scroll-mt-[80px]">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-title text-3xl md:text-4xl font-inter font-bold">
           Serviços Prestados
