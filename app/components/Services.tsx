@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import {
   Truck,
   Leaf,
@@ -15,21 +16,25 @@ export default function Services() {
       icon: Truck,
       title: 'Coleta / Logística',
       text: 'Soluções eficazes para a coleta mecanizada de resíduos orgânicos. Usamos caminhões licenciados e fornecemos contentores resistentes e práticos para armazenamento temporário adequado.',
+      image: '/coleta.jpg', // Adicione essa imagem futuramente
     },
     {
       icon: Leaf,
       title: 'Tratamento em Compostagem',
       text: 'Compostagem em sistema fechado com tecnologia alemã GORE® COVER, que garante eficiência, monitoramento total e redução de até 97% nos odores e vetores.',
+      image: '/tratamento.jpg',
     },
     {
       icon: FlaskConical,
       title: 'Produção de Fertilizante',
       text: 'Resultado da compostagem: fertilizante orgânico certificado pelo MAPA, amplamente utilizado em hortaliças, frutíferas, áreas degradadas e paisagismo.',
+      image: '/fertilizante.jpg',
     },
     {
       icon: Lightbulb,
       title: 'Tecnologia e Consultoria',
       text: 'Desenvolvimento de projetos logísticos e fornecimento de tecnologia UTV AG para gestão e tratamento da fração orgânica de RSU em parceria com GORE® COVER.',
+      image: '/tecnologia.jpg',
     },
   ];
 
@@ -53,27 +58,28 @@ export default function Services() {
             transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.03 }}
-            className="rounded-xl p-6 text-center flex flex-col items-center gap-4 transition-all duration-300
-              bg-white/30 backdrop-blur-md border border-white/20 shadow-md hover:shadow-xl"
+            className="rounded-xl overflow-hidden bg-white/30 backdrop-blur-md border border-white/20 shadow-md hover:shadow-xl transition-all duration-300"
           >
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-              className="w-fit"
-            >
+            <Image
+              src={service.image}
+              alt={service.title}
+              width={600}
+              height={300}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6 text-center flex flex-col items-center gap-4">
               <service.icon className="h-8 w-8 text-primary" />
-            </motion.div>
-            <h3 className="text-xl font-semibold text-title font-inter">
-              {service.title}
-            </h3>
-            <p className="text-secondary font-roboto leading-relaxed text-sm">
-              {service.text}
-            </p>
+              <h3 className="text-xl font-semibold text-title font-inter">
+                {service.title}
+              </h3>
+              <p className="text-secondary font-roboto leading-relaxed text-sm">
+                {service.text}
+              </p>
+            </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Botão de ação */}
       <div className="text-center mt-14">
         <motion.a
           whileHover={{ scale: 1.05 }}
