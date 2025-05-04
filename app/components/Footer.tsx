@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import Image from 'next/image';
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -35,11 +36,25 @@ export default function Footer() {
           {/* Contato */}
           <div>
             <h3 className="text-xl font-inter text-white font-bold mb-4">Contato</h3>
-            <ul className="space-y-2 text-sm font-roboto font-normal opacity-90">
-              <li>(48) 9993-80221</li>
-              <li>contato@composul.com</li>
-              <li>Servidão de acesso 505 BR 101KM 379</li>
-              <li>Vila Nova, Içara/SC - CEP 88820-000</li>
+            <ul className="space-y-3 text-sm font-roboto font-normal opacity-90">
+              <li className="flex items-start gap-2">
+                <Phone className="w-4 h-4 text-orange mt-1" />
+                <div className="flex flex-col leading-tight gap-2">
+                  <span>(48) 9993-80221</span>
+                  <span>(48) 98829-0320</span>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <Mail className="w-4 h-4 text-orange mt-1" />
+                <span>contato@composul.com</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-orange mt-1" />
+                <div className="leading-tight">
+                  <span>Servidão de acesso 505 BR 101KM 379</span><br />
+                  <span>Vila Nova, Içara/SC - CEP 88820-000</span>
+                </div>
+              </li>
             </ul>
           </div>
 

@@ -18,14 +18,24 @@ export default function Contact() {
           <ul className="space-y-4 text-sm font-roboto font-normal opacity-90 mb-8">
             <li className="flex items-start gap-3">
               <Phone className="w-5 h-5 text-primary mt-1" />
-              <a
-                href="https://wa.me/5548999380221"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-orange transition-colors duration-300"
-              >
-                (48) 9993-80221
-              </a>
+              <div className="flex flex-col gap-2">
+                <a
+                  href="https://wa.me/5548999380221"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-orange transition-colors duration-300"
+                >
+                  (48) 9993-80221
+                </a>
+                <a
+                  href="https://wa.me/5548988290320"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-orange transition-colors duration-300"
+                >
+                  (48) 98829-0320
+                </a>
+              </div>
             </li>
             <li className="flex items-start gap-3">
               <Mail className="w-5 h-5 text-primary mt-1" />
