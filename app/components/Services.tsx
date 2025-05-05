@@ -27,7 +27,7 @@ export default function Services() {
       icon: Truck,
       title: 'Coleta / Logística',
       text: 'Soluções eficazes para a coleta mecanizada de resíduos orgânicos. Usamos caminhões licenciados e fornecemos contentores resistentes e práticos para armazenamento temporário adequado.',
-      image: '/coleta.jpg',
+      image: '/logistica-recebimento.jpg',
     },
     {
       icon: Leaf,
