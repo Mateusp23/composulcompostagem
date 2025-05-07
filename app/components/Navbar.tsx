@@ -28,10 +28,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full z-[999]">
       <div
-        className={`w-full min-h-[80px] px-6 md:px-12 flex items-center backdrop-blur-md transition-all duration-300 ${scrolled
-            ? 'bg-gradient-to-l from-orange via-secondary to-primary shadow-lg'
-            : 'bg-gradient-to-l from-orange/60 via-secondary/60 to-primary/60 shadow-sm'
-          }`}
+        className={'w-full min-h-[80px] px-6 md:px-12 flex items-center backdrop-blur-md transition-all duration-300 bg-gradient-to-l from-orange via-secondary to-primary shadow-lg'}
       >
         <div className="max-w-7xl mx-auto w-full flex justify-between items-center relative">
 
