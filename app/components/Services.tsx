@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Truck,
@@ -18,7 +17,7 @@ interface Service {
   icon: LucideIcon;
   title: string;
   text: string;
-  image: string;
+  images: string[];
 }
 
 export default function Services() {
@@ -27,43 +26,49 @@ export default function Services() {
       icon: Truck,
       title: 'Coleta / Logística',
       text: 'Soluções eficazes para a coleta mecanizada de resíduos orgânicos. Usamos caminhões licenciados e fornecemos contentores resistentes e práticos para armazenamento temporário adequado.',
-      image: '/logistica-recebimento.jpg',
+      images: ['/coleta.jpg', '/coleta-2.jpeg', '/coleta-3.jpeg'],
     },
     {
       icon: Leaf,
       title: 'Tratamento em Compostagem',
       text: 'Compostagem em sistema fechado com tecnologia alemã GORE® COVER, que garante eficiência, monitoramento total e redução de até 97% nos odores e vetores.',
-      image: '/tratamento.jpg',
+      images: ['/tratamento.jpg', '/tratamento2.jpeg', '/tratamento3.jpeg', '/tratamento4.jpeg'],
     },
     {
       icon: FlaskConical,
       title: 'Produção de Fertilizante',
       text: 'Resultado da compostagem: fertilizante orgânico certificado pelo MAPA, amplamente utilizado em hortaliças, frutíferas, áreas degradadas e paisagismo.',
-      image: '/fertilizante.jpg',
+      images: ['/fertilizante.jpg', '/fertilizante2.jpeg', '/fertilizante3.jpeg', '/fertilizante4.jpeg',],
     },
     {
       icon: Lightbulb,
       title: 'Tecnologia e Consultoria',
       text: 'Desenvolvimento de projetos logísticos e fornecimento de tecnologia UTV AG para gestão e tratamento da fração orgânica de RSU em parceria com GORE® COVER.',
-      image: '/tecnologia.jpg',
+      images: ['/tecnologia.jpg', '/tecnologia2.jpeg', '/tecnologia3.jpg'],
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const handleNext = () => {
+  const handleImageNext = () => {
     if (currentIndex !== null) {
-      setCurrentIndex((currentIndex + 1) % services.length);
+      const service = services[currentIndex];
+      setCurrentImageIndex((currentImageIndex + 1) % service.images.length);
     }
   };
 
-  const handlePrev = () => {
+  const handleImagePrev = () => {
     if (currentIndex !== null) {
-      setCurrentIndex((currentIndex - 1 + services.length) % services.length);
+      const service = services[currentIndex];
+      setCurrentImageIndex((currentImageIndex - 1 + service.images.length) % service.images.length);
     }
   };
 
-  const closeModal = () => setCurrentIndex(null);
+  const closeModal = () => {
+    setCurrentIndex(null);
+    setCurrentImageIndex(0);
+  };
 
   return (
     <section id="servicos" className="bg-background px-6 md:px-12 py-20 scroll-mt-[80px]">
@@ -82,7 +87,7 @@ export default function Services() {
             className="cursor-pointer rounded-xl overflow-hidden bg-white/30 backdrop-blur-md border border-white/20 shadow-md hover:shadow-xl transition-all duration-300"
             whileHover={{ scale: 1.03 }}
           >
-            <Image src={service.image} alt={service.title} width={600} height={300} className="w-full h-48 object-cover" />
+            <img src={service.images[0]} alt={service.title} width={600} height={300} className="w-full h-48 object-cover" />
             <div className="p-6 text-center flex flex-col items-center gap-4">
               <service.icon className="h-8 w-8 text-primary" />
               <h3 className="text-xl font-semibold text-title font-inter">{service.title}</h3>
@@ -92,7 +97,7 @@ export default function Services() {
         ))}
       </div>
 
-      {/* Modal com setas */}
+      {/* Modal com setas apenas para imagens */}
       <AnimatePresence>
         {currentIndex !== null && (
           <motion.div
@@ -109,36 +114,37 @@ export default function Services() {
               exit={{ scale: 0.9 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <button onClick={closeModal} className="absolute cursor-pointer top-3 right-3 text-black hover:text-orange transition">
+              <button onClick={closeModal} className="absolute cursor-pointer top-2 right-2 text-white hover:text-orange transition">
                 <X className="w-6 h-6" />
               </button>
 
-              <Image
-                src={services[currentIndex].image}
-                alt={services[currentIndex].title}
-                width={800}
-                height={500}
-                className="w-full h-[400px] object-cover"
-              />
+              <div className="relative">
+                <img
+                  src={services[currentIndex].images[currentImageIndex]}
+                  alt={services[currentIndex].title}
+                  width={800}
+                  height={500}
+                  className="w-full h-[400px] object-cover"
+                />
+
+                <button
+                  onClick={handleImagePrev}
+                  className="absolute cursor-pointer left-3 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow"
+                >
+                  <ChevronLeft className="w-5 h-5 text-primary" />
+                </button>
+                <button
+                  onClick={handleImageNext}
+                  className="absolute cursor-pointer right-3 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow"
+                >
+                  <ChevronRight className="w-5 h-5 text-primary" />
+                </button>
+              </div>
 
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{services[currentIndex].title}</h3>
                 <p className="text-sm text-secondary">{services[currentIndex].text}</p>
               </div>
-
-              {/* Setas de navegação */}
-              <button
-                onClick={handlePrev}
-                className="absolute cursor-pointer left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow"
-              >
-                <ChevronLeft className="w-5 h-5 text-primary" />
-              </button>
-              <button
-                onClick={handleNext}
-                className="absolute cursor-pointer right-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow"
-              >
-                <ChevronRight className="w-5 h-5 text-primary" />
-              </button>
             </motion.div>
           </motion.div>
         )}
