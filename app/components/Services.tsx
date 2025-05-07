@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Truck,
@@ -38,7 +38,7 @@ export default function Services() {
       icon: FlaskConical,
       title: 'Produção de Fertilizante',
       text: 'Resultado da compostagem: fertilizante orgânico certificado pelo MAPA, amplamente utilizado em hortaliças, frutíferas, áreas degradadas e paisagismo.',
-      images: ['/fertilizante.jpg', '/fertilizante2.jpeg', '/fertilizante3.jpeg', '/fertilizante4.jpeg',],
+      images: ['/fertilizante.jpg', '/fertilizante2.jpeg', '/fertilizante3.jpeg', '/fertilizante4.jpeg'],
     },
     {
       icon: Lightbulb,
@@ -97,7 +97,6 @@ export default function Services() {
         ))}
       </div>
 
-      {/* Modal com setas apenas para imagens */}
       <AnimatePresence>
         {currentIndex !== null && (
           <motion.div
@@ -118,14 +117,31 @@ export default function Services() {
                 <X className="w-6 h-6" />
               </button>
 
-              <div className="relative">
-                <img
-                  src={services[currentIndex].images[currentImageIndex]}
-                  alt={services[currentIndex].title}
-                  width={800}
-                  height={500}
-                  className="w-full h-[400px] object-cover"
-                />
+              <div className="relative h-[400px] w-full overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={services[currentIndex].images[currentImageIndex]}
+                    src={services[currentIndex].images[currentImageIndex]}
+                    alt={services[currentIndex].title}
+                    width={800}
+                    height={500}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                </AnimatePresence>
+
+                {/* Pontos indicadores */}
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                  {services[currentIndex].images.map((_, i) => (
+                    <span
+                      key={i}
+                      className={`w-2 h-2 rounded-full ${i === currentImageIndex ? 'bg-primary' : 'bg-gray-300'} transition-all duration-300`}
+                    ></span>
+                  ))}
+                </div>
 
                 <button
                   onClick={handleImagePrev}
