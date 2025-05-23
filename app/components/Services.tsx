@@ -42,9 +42,9 @@ export default function Services() {
     },
     {
       icon: Lightbulb,
-      title: 'Tecnologia e Consultoria',
-      text: 'Desenvolvimento de projetos logísticos e fornecimento de tecnologia UTV AG para gestão e tratamento da fração orgânica de RSU em parceria com GORE® COVER.',
-      images: ['/tecnologia.jpg', '/tecnologia2.jpeg', '/tecnologia3.jpg'],
+      title: 'TECNOLOGIA GORE ® COVER E CONSULTORIA',
+      text: 'Desenvolvimento de projetos logísticos e fornecimento de tecnologia GORE® COVER.para gestão e tratamento da fração orgânica de RSU em parceria com a empresa UTV AG.',
+      images: ['/tecnologia.jpg', '/tecnologia2.jpeg', '/tecnologia3.jpg', '/tecnologia4.jpg'],
     },
   ];
 
@@ -74,7 +74,7 @@ export default function Services() {
     <section id="servicos" className="bg-background px-6 md:px-12 py-20 scroll-mt-[80px]">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-title text-3xl md:text-4xl font-inter font-bold">Serviços Prestados</h2>
-        <p className="text-secondary font-roboto mt-4 max-w-2xl mx-auto">
+        <p className="text-secondary text-lg font-roboto mt-4 max-w-2xl mx-auto">
           Atuamos em toda a cadeia da compostagem: da coleta até a produção de fertilizantes, com tecnologia e consultoria especializada.
         </p>
       </div>
@@ -90,8 +90,8 @@ export default function Services() {
             <img src={service.images[0]} alt={service.title} width={600} height={300} className="w-full h-48 object-cover" />
             <div className="p-6 text-center flex flex-col items-center gap-4">
               <service.icon className="h-8 w-8 text-primary" />
-              <h3 className="text-xl font-semibold text-title font-inter">{service.title}</h3>
-              <p className="text-secondary font-roboto leading-relaxed text-sm">{service.text}</p>
+              <h3 className="text-2xl font-semibold text-title uppercase font-inter">{service.title}</h3>
+              <p className="text-secondary font-roboto leading-relaxed text-md">{service.text}</p>
             </div>
           </motion.div>
         ))}
@@ -158,8 +158,8 @@ export default function Services() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{services[currentIndex].title}</h3>
-                <p className="text-sm text-secondary">{services[currentIndex].text}</p>
+                <h3 className="text-2xl font-bold mb-2">{services[currentIndex].title}</h3>
+                <p className="text-md text-secondary">{services[currentIndex].text}</p>
               </div>
             </motion.div>
           </motion.div>

@@ -59,7 +59,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative group transition-all duration-200"
+                className="relative group transition-all duration-200 uppercase"
               >
                 <span className="group-hover:text-orange-200">{item.label}</span>
                 <span className="absolute left-0 bottom-[-2px] w-0 h-[1px] bg-white group-hover:w-full transition-all duration-300"></span>
@@ -84,7 +84,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block text-base hover:text-orange-200 transition-all"
+                className="block text-base hover:text-orange-200 transition-all uppercase"
                 onClick={() => setMenuOpen(false)}
               >
                 {item.label}

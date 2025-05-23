@@ -12,7 +12,7 @@ export default function Partners() {
         <h2 className="text-title text-3xl md:text-4xl font-inter font-bold">
           Nossos Parceiros
         </h2>
-        <p className="text-secondary font-roboto mt-4 max-w-2xl mx-auto">
+        <p className="text-secondary text-lg font-roboto mt-4 max-w-2xl mx-auto">
           Empresas e instituições que confiam na Composul para transformar resíduos em soluções sustentáveis.
         </p>
       </div>

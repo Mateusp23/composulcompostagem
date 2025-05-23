@@ -25,10 +25,10 @@ export default function Hero() {
           className="text-left"
         >
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight font-inter mb-6 text-white">
-            Compostagem inteligente Um futuro sustentável
+            Compostagem com tecnologia e segurança em todas as etapas.
           </h1>
           <p className="text-lg text-white font-roboto mb-8">
-            Soluções ecológicas para transformar resíduos em vida. Cuidamos do planeta com você, de forma prática e eficiente.
+            Conheça nosso sistema de logística, tratamento fechado GORE ® Cover e produção de fertilizantes.
           </p>
           <motion.a
             whileHover={{ scale: 1.05 }}

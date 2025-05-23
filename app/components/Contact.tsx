@@ -1,10 +1,10 @@
 'use client';
 
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
-import Image from 'next/image';
 import { FaWhatsapp } from 'react-icons/fa';
 
 import { motion } from 'framer-motion';
+import ContactForm from './ContactForm';
 
 export default function Contact() {
   return (
@@ -118,7 +118,7 @@ export default function Contact() {
 
         {/* Mapa */}
         <div>
-          <a
+          {/* <a
             href="https://maps.app.goo.gl/yZK4pgRTZf268BoEA"
             target="_blank"
             rel="noopener noreferrer"
@@ -131,7 +131,9 @@ export default function Contact() {
               height={420}
               className="w-full h-[450px] md:h-[420px] object-contain rounded-xl overflow-hidden"
             />
-          </a>
+          </a> */}
+
+          <ContactForm />
         </div>
       </div>
     </section>

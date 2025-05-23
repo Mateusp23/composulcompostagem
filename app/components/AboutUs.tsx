@@ -28,16 +28,16 @@ export default function AboutUs() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed">
               Somos uma empresa com mais de 12 anos de história, pioneira e especializada na coleta mecanizada,
               no tratamento de resíduos orgânicos através de compostagem e na produção de Fertilizante Orgânico
               Composto de alta qualidade, com registros no Ministério da Agricultura.
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed">
               Atendemos setores variados, oferecendo destinação adequada conforme a Política Nacional de Resíduos
               Sólidos (Lei nº 12.305/2010), evitando passivos ambientais e corresponsabilidade.
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed">
               Representamos a UTV AG na América do Sul, empresa alemã com tecnologia GORE® COVER:
               controle total do processo, alta eficiência e baixo custo operacional.
             </p>
@@ -72,8 +72,8 @@ export default function AboutUs() {
               },
               {
                 icon: Factory,
-                title: 'Tecnologia Alemã',
-                text: 'Representantes exclusivos da UTV AG e tecnologia GORE® COVER na América do Sul',
+                title: 'Tecnologia GORE ® Cover',
+                text: 'Desenvolvemos projetos para empresas de tratamento de resíduos na América Latina em parceira com a empresa alemã UTV AG.',
               },
             ].map(({ icon: Icon, title, text }, i) => (
               <motion.div
@@ -83,8 +83,8 @@ export default function AboutUs() {
               >
                 <Icon className="w-12 h-12 text-[#437E3B] flex-shrink-0" />
                 <div>
-                  <h3 className="font-bold text-lg mb-2">{title}</h3>
-                  <p className="text-gray-600">{text}</p>
+                  <h3 className="font-bold text-2xl mb-2">{title}</h3>
+                  <p className="text-gray-600 text-lg">{text}</p>
                 </div>
               </motion.div>
             ))}
