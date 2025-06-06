@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "partners": "Socios"
+  },
+  "hero": {
+    "title": "Compostaje Sostenible",
+    "subtitle": "Transformando residuos en recursos",
+    "cta": "Saber más"
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "paragraphs": [
+      "Somos una empresa con más de 12 años de historia, pionera y especializada en la recolección mecanizada, el tratamiento de residuos orgánicos mediante compostaje y la producción de Fertilizante Orgánico Compuesto de alta calidad, con registros en el Ministerio de Agricultura.",
+      "Atendemos a diversos sectores, ofreciendo una disposición adecuada conforme a la Política Nacional de Residuos Sólidos (Ley Nº 12.305/2010), evitando pasivos ambientales y corresponsabilidad.",
+      "Representamos a UTV AG en América del Sur, empresa alemana con tecnología GORE® COVER: control total del proceso, alta eficiencia y bajo costo operativo."
+    ],
+    "highlights": [
+      {
+        "title": "Pionerismo",
+        "text": "12 años de experiencia en recolección mecanizada y tratamiento de residuos orgánicos"
+      },
+      {
+        "title": "Cumplimiento Legal",
+        "text": "Cumplimos con todas las directrices de la Política Nacional de Residuos Sólidos"
+      },
+      {
+        "title": "Tecnología GORE ® Cover",
+        "text": "Desarrollamos proyectos para empresas de tratamiento de residuos en América Latina en asociación con la empresa alemana UTV AG."
+      }
+    ],
+    "cta": "Saber más"
+  },
+  "services": {
+    "title": "Servicios Prestados",
+    "description": "Actuamos en toda la cadena del compostaje: desde la recolección hasta la producción de fertilizantes, con tecnología y consultoría especializada.",
+    "cta": "Solicite un presupuesto",
+    "list": [
+      {
+        "title": "Recolección / Logística",
+        "text": "Soluciones eficaces para la recolección mecanizada de residuos orgánicos. Utilizamos camiones autorizados y proporcionamos contenedores resistentes y prácticos para el almacenamiento temporal adecuado."
+      },
+      {
+        "title": "Tratamiento en Compostaje",
+        "text": "Compostaje en sistema cerrado con tecnología alemana GORE® COVER, que garantiza eficiencia, monitoreo completo y reducción de hasta un 97% en olores y vectores."
+      },
+      {
+        "title": "Producción de Fertilizante",
+        "text": "Resultado del compostaje: fertilizante orgánico certificado por el Ministerio de Agricultura, ampliamente utilizado en hortalizas, frutales, áreas degradadas y paisajismo."
+      },
+      {
+        "title": "TECNOLOGÍA GORE® COVER Y CONSULTORÍA",
+        "text": "Desarrollo de proyectos logísticos y provisión de tecnología GORE® COVER para la gestión y tratamiento de la fracción orgánica de RSU en colaboración con UTV AG."
+      }
+    ]
+  },
+  "partners": {
+    "title": "Nuestros Socios",
+    "description": "Empresas e instituciones que confían en Composul para transformar residuos en soluciones sostenibles."
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "phones": [
+      "(48) 9993-80221",
+      "(48) 98829-0320"
+    ],
+    "email": "contato@composul.com",
+    "address": "Camino de acceso 505 BR 101KM 379\nVila Nova, Içara/SC - CP 88820-000",
+    "socialTitle": "Síguenos en nuestras redes:",
+    "cta": "Habla con nosotros",
+    "form": {
+      "name": "¿Cuál es tu nombre?",
+      "phone": "Teléfono/WhatsApp",
+      "email": "Correo electrónico",
+      "city": "¿Cuál es tu ciudad?",
+      "message": "Deja tu mensaje...",
+      "submit": "¡QUIERO SER CONTACTADO!",
+      "success": "¡Enviado con éxito!"
+    }
+  },
+  "footer": {
+    "services": {
+      "title": "Servicios",
+      "items": [
+        "Recolección y Logística",
+        "Tratamiento por Compostaje",
+        "Producción de Fertilizantes",
+        "Tecnología y Consultoría"
+      ]
+    },
+    "contact": {
+      "title": "Contacto",
+      "phones": [
+        "(48) 9993-80221",
+        "(48) 98829-0320"
+      ],
+      "email": "contato@composul.com",
+      "address": [
+        "Servidão de acesso 505 BR 101KM 379",
+        "Vila Nova, Içara/SC - CP 88820-000"
+      ]
+    },
+    "socials": "Redes Sociales",
+    "copyright": "Todos los derechos reservados."
+  }
+} 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Truck,
@@ -12,40 +12,17 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
-
-interface Service {
-  icon: LucideIcon;
-  title: string;
-  text: string;
-  images: string[];
-}
+import { useTranslations } from 'next-intl';
 
 export default function Services() {
-  const services: Service[] = [
-    {
-      icon: Truck,
-      title: 'Coleta / Logística',
-      text: 'Soluções eficazes para a coleta mecanizada de resíduos orgânicos. Usamos caminhões licenciados e fornecemos contentores resistentes e práticos para armazenamento temporário adequado.',
-      images: ['/coleta.jpg', '/coleta-2.jpeg', '/coleta-3.jpeg'],
-    },
-    {
-      icon: Leaf,
-      title: 'Tratamento em Compostagem',
-      text: 'Compostagem em sistema fechado com tecnologia alemã GORE® COVER, que garante eficiência, monitoramento total e redução de até 97% nos odores e vetores.',
-      images: ['/tratamento.jpg', '/tratamento2.jpeg', '/tratamento3.jpeg', '/tratamento4.jpeg'],
-    },
-    {
-      icon: FlaskConical,
-      title: 'Produção de Fertilizante',
-      text: 'Resultado da compostagem: fertilizante orgânico certificado pelo MAPA, amplamente utilizado em hortaliças, frutíferas, áreas degradadas e paisagismo.',
-      images: ['/fertilizante.jpg', '/fertilizante2.jpeg', '/fertilizante3.jpeg', '/fertilizante4.jpeg'],
-    },
-    {
-      icon: Lightbulb,
-      title: 'TECNOLOGIA GORE ® COVER E CONSULTORIA',
-      text: 'Desenvolvimento de projetos logísticos e fornecimento de tecnologia GORE® COVER.para gestão e tratamento da fração orgânica de RSU em parceria com a empresa UTV AG.',
-      images: ['/tecnologia.jpg', '/tecnologia2.jpeg', '/tecnologia3.jpg', '/tecnologia4.jpg'],
-    },
+  const t = useTranslations('services');
+
+  const serviceIcons: LucideIcon[] = [Truck, Leaf, FlaskConical, Lightbulb];
+  const serviceImages: string[][] = [
+    ['/coleta.jpg', '/coleta-2.jpeg', '/coleta-3.jpeg'],
+    ['/tratamento.jpg', '/tratamento2.jpeg', '/tratamento3.jpeg', '/tratamento4.jpeg'],
+    ['/fertilizante.jpg', '/fertilizante2.jpeg', '/fertilizante3.jpeg', '/fertilizante4.jpeg'],
+    ['/tecnologia.jpg', '/tecnologia2.jpeg', '/tecnologia3.jpg', '/tecnologia4.jpg'],
   ];
 
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
@@ -53,15 +30,15 @@ export default function Services() {
 
   const handleImageNext = () => {
     if (currentIndex !== null) {
-      const service = services[currentIndex];
-      setCurrentImageIndex((currentImageIndex + 1) % service.images.length);
+      const images = serviceImages[currentIndex];
+      setCurrentImageIndex((currentImageIndex + 1) % images.length);
     }
   };
 
   const handleImagePrev = () => {
     if (currentIndex !== null) {
-      const service = services[currentIndex];
-      setCurrentImageIndex((currentImageIndex - 1 + service.images.length) % service.images.length);
+      const images = serviceImages[currentIndex];
+      setCurrentImageIndex((currentImageIndex - 1 + images.length) % images.length);
     }
   };
 
@@ -73,28 +50,29 @@ export default function Services() {
   return (
     <section id="servicos" className="bg-background px-6 md:px-12 py-20 scroll-mt-[80px]">
       <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-title text-3xl md:text-4xl font-inter font-bold">Serviços Prestados</h2>
-        <p className="text-secondary text-lg font-roboto mt-4 max-w-2xl mx-auto">
-          Atuamos em toda a cadeia da compostagem: da coleta até a produção de fertilizantes, com tecnologia e consultoria especializada.
-        </p>
+        <h2 className="text-title text-3xl md:text-4xl font-inter font-bold">{t('title')}</h2>
+        <p className="text-secondary text-lg font-roboto mt-4 max-w-2xl mx-auto">{t('description')}</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className="cursor-pointer rounded-xl overflow-hidden bg-white/30 backdrop-blur-md border border-white/20 shadow-md hover:shadow-xl transition-all duration-300"
-            whileHover={{ scale: 1.03 }}
-          >
-            <img src={service.images[0]} alt={service.title} width={600} height={300} className="w-full h-48 object-cover" />
-            <div className="p-6 text-center flex flex-col items-center gap-4">
-              <service.icon className="h-8 w-8 text-primary" />
-              <h3 className="text-2xl font-semibold text-title uppercase font-inter">{service.title}</h3>
-              <p className="text-secondary font-roboto leading-relaxed text-md">{service.text}</p>
-            </div>
-          </motion.div>
-        ))}
+        {t.raw('list').map((item: any, index: number) => {
+          const Icon = serviceIcons[index];
+          return (
+            <motion.div
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className="cursor-pointer rounded-xl overflow-hidden bg-white/30 backdrop-blur-md border border-white/20 shadow-md hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.03 }}
+            >
+              <img src={serviceImages[index][0]} alt={item.title} width={600} height={300} className="w-full h-48 object-cover" />
+              <div className="p-6 text-center flex flex-col items-center gap-4">
+                <Icon className="h-8 w-8 text-primary" />
+                <h3 className="text-2xl font-semibold text-title uppercase font-inter">{item.title}</h3>
+                <p className="text-secondary font-roboto leading-relaxed text-md">{item.text}</p>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
 
       <AnimatePresence>
@@ -120,9 +98,9 @@ export default function Services() {
               <div className="relative h-[400px] w-full overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.img
-                    key={services[currentIndex].images[currentImageIndex]}
-                    src={services[currentIndex].images[currentImageIndex]}
-                    alt={services[currentIndex].title}
+                    key={serviceImages[currentIndex][currentImageIndex]}
+                    src={serviceImages[currentIndex][currentImageIndex]}
+                    alt={t.raw(`list.${currentIndex}.title`)}
                     width={800}
                     height={500}
                     className="absolute inset-0 w-full h-full object-cover"
@@ -133,9 +111,9 @@ export default function Services() {
                   />
                 </AnimatePresence>
 
-                {/* Pontos indicadores */}
+                {/* Navegação */}
                 <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-                  {services[currentIndex].images.map((_, i) => (
+                  {serviceImages[currentIndex].map((_, i) => (
                     <span
                       key={i}
                       className={`w-2 h-2 rounded-full ${i === currentImageIndex ? 'bg-primary' : 'bg-gray-300'} transition-all duration-300`}
@@ -158,8 +136,8 @@ export default function Services() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">{services[currentIndex].title}</h3>
-                <p className="text-md text-secondary">{services[currentIndex].text}</p>
+                <h3 className="text-2xl font-bold mb-2">{t(`list.${currentIndex}.title`)}</h3>
+                <p className="text-md text-secondary">{t(`list.${currentIndex}.text`)}</p>
               </div>
             </motion.div>
           </motion.div>
@@ -173,7 +151,7 @@ export default function Services() {
           href="https://wa.me/5548999380221?text=Olá%2C%20gostaria%20de%20falar%20com%20a%20Composul!"
           className="inline-block bg-gradient-to-r from-primary to-secondary text-white text-base font-medium px-8 py-3 rounded-full shadow-md transition-transform duration-300"
         >
-          Solicite um orçamento
+          {t('cta')}
         </motion.a>
       </div>
     </section>

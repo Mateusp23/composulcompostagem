@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Sobre",
+    "services": "Serviços",
+    "contact": "Contato",
+    "partners": "Parceiros"
+  },
+  "hero": {
+    "title": "Compostagem Sustentável",
+    "subtitle": "Transformando resíduos em recursos",
+    "cta": "Saiba mais"
+  },
+  "about": {
+    "title": "Quem Somos",
+    "paragraphs": [
+      "Somos uma empresa com mais de 12 anos de história, pioneira e especializada na coleta mecanizada, no tratamento de resíduos orgânicos através de compostagem e na produção de Fertilizante Orgânico Composto de alta qualidade, com registros no Ministério da Agricultura.",
+      "Atendemos setores variados, oferecendo destinação adequada conforme a Política Nacional de Resíduos Sólidos (Lei nº 12.305/2010), evitando passivos ambientais e corresponsabilidade.",
+      "Representamos a UTV AG na América do Sul, empresa alemã com tecnologia GORE® COVER: controle total do processo, alta eficiência e baixo custo operacional."
+    ],
+    "highlights": [
+      {
+        "title": "Pioneirismo",
+        "text": "12 anos de experiência em coleta mecanizada e tratamento de resíduos orgânicos"
+      },
+      {
+        "title": "Conformidade Legal",
+        "text": "Atendemos todas as diretrizes da Política Nacional de Resíduos Sólidos"
+      },
+      {
+        "title": "Tecnologia GORE ® Cover",
+        "text": "Desenvolvemos projetos para empresas de tratamento de resíduos na América Latina em parceira com a empresa alemã UTV AG."
+      }
+    ],
+    "cta": "Saiba mais"
+  },
+  "services": {
+    "title": "Serviços Prestados",
+    "description": "Atuamos em toda a cadeia da compostagem: da coleta até a produção de fertilizantes, com tecnologia e consultoria especializada.",
+    "cta": "Solicite um orçamento",
+    "list": [
+      {
+        "title": "Coleta / Logística",
+        "text": "Soluções eficazes para a coleta mecanizada de resíduos orgânicos. Usamos caminhões licenciados e fornecemos contentores resistentes e práticos para armazenamento temporário adequado."
+      },
+      {
+        "title": "Tratamento em Compostagem",
+        "text": "Compostagem em sistema fechado com tecnologia alemã GORE® COVER, que garante eficiência, monitoramento total e redução de até 97% nos odores e vetores."
+      },
+      {
+        "title": "Produção de Fertilizante",
+        "text": "Resultado da compostagem: fertilizante orgânico certificado pelo MAPA, amplamente utilizado em hortaliças, frutíferas, áreas degradadas e paisagismo."
+      },
+      {
+        "title": "TECNOLOGIA GORE ® COVER E CONSULTORIA",
+        "text": "Desenvolvimento de projetos logísticos e fornecimento de tecnologia GORE® COVER.para gestão e tratamento da fração orgânica de RSU em parceria com a empresa UTV AG."
+      }
+    ]
+  },
+  "partners": {
+    "title": "Nossos Parceiros",
+    "description": "Empresas e instituições que confiam na Composul para transformar resíduos em soluções sustentáveis."
+  },
+  "contact": {
+    "title": "Entre em contato",
+    "phones": [
+      "(48) 9993-80221",
+      "(48) 98829-0320"
+    ],
+    "email": "contato@composul.com",
+    "address": "Servidão de acesso 505 BR 101KM 379\nVila Nova, Içara/SC - CEP 88820-000",
+    "socialTitle": "Acompanhe nossas redes:",
+    "cta": "Fale conosco",
+    "form": {
+      "name": "Qual seu nome?",
+      "phone": "Tel/Whats",
+      "email": "E-mail",
+      "city": "Qual sua cidade?",
+      "message": "Deixe sua mensagem...",
+      "submit": "QUERO RECEBER CONTATO!",
+      "success": "Enviado com sucesso!"
+    }
+  },
+  "footer": {
+    "services": {
+      "title": "Serviços",
+      "items": [
+        "Coleta e Logística",
+        "Tratamento em Compostagem",
+        "Produção de Fertilizante",
+        "Tecnologia e Consultoria"
+      ]
+    },
+    "contact": {
+      "title": "Contato",
+      "phones": [
+        "(48) 9993-80221",
+        "(48) 98829-0320"
+      ],
+      "email": "contato@composul.com",
+      "address": [
+        "Servidão de acesso 505 BR 101KM 379",
+        "Vila Nova, Içara/SC - CEP 88820-000"
+      ]
+    },
+    "socials": "Redes Sociais",
+    "copyright": "Todos os direitos reservados."
+  }
+} 

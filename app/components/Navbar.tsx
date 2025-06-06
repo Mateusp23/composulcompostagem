@@ -4,22 +4,24 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslations } from 'next-intl';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const t = useTranslations('nav');
 
   const menuItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Sobre', href: '#sobre' },
-    { label: 'Serviços', href: '#servicos' },
-    { label: 'Contato', href: '#contato' },
-    { label: 'Parceiros', href: '#parceiros' },
+    { label: t('home'), href: '/' },
+    { label: t('about'), href: '#sobre' },
+    { label: t('services'), href: '#servicos' },
+    { label: t('contact'), href: '#contato' },
+    { label: t('partners'), href: '#parceiros' },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      setMenuOpen(false);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -27,20 +29,39 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-[999]">
-      <div
-        className={'w-full min-h-[80px] px-6 md:px-12 flex items-center backdrop-blur-md transition-all duration-300 bg-gradient-to-l from-orange via-secondary to-primary shadow-lg'}
-      >
-        <div className="max-w-7xl mx-auto w-full flex justify-between items-center relative">
+      <div className="w-full min-h-[88px] px-6 md:px-12 flex items-center backdrop-blur-md transition-all duration-300 bg-gradient-to-l from-orange via-secondary to-primary shadow-lg">
+        <div className="max-w-7xl mx-auto w-full flex items-center justify-between relative">
 
           {/* Logo */}
-          <div className="md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
-            <Link href="/" className="flex items-center">
+          <div className="flex-shrink-0">
+            <Link href="/" className="flex items-center justify-center">
               <img
                 src="/new-logo-composul.png"
                 alt="Logo Composul"
-                className="h-16 md:h-20 object-contain"
+                className="h-14 md:h-20 object-contain"
               />
             </Link>
+          </div>
+
+          {/* Menu desktop */}
+          <div className="hidden md:flex items-center justify-end flex-1 gap-10">
+            <nav className="flex gap-8 text-white font-roboto text-sm md:text-base">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="relative group transition-all duration-200 uppercase"
+                >
+                  <span className="group-hover:text-orange-200">{item.label}</span>
+                  <span className="absolute left-0 bottom-[-2px] w-0 h-[1px] bg-white group-hover:w-full transition-all duration-300"></span>
+                </Link>
+              ))}
+            </nav>
+
+            {/* Switcher separado e com espaço */}
+            <div className="ml-6">
+              <LanguageSwitcher />
+            </div>
           </div>
 
           {/* Ícone hamburguer */}
@@ -52,24 +73,10 @@ export default function Navbar() {
               {menuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
-
-          {/* Menu Desktop */}
-          <nav className="hidden md:flex gap-6 ml-auto text-white font-roboto text-sm md:text-base">
-            {menuItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="relative group transition-all duration-200 uppercase"
-              >
-                <span className="group-hover:text-orange-200">{item.label}</span>
-                <span className="absolute left-0 bottom-[-2px] w-0 h-[1px] bg-white group-hover:w-full transition-all duration-300"></span>
-              </Link>
-            ))}
-          </nav>
         </div>
       </div>
 
-      {/* Menu Mobile Animado */}
+      {/* Menu Mobile */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -90,6 +97,9 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
+            <div className="pt-4">
+              <LanguageSwitcher />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

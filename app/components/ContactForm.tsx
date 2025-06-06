@@ -1,8 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function ContactForm() {
+  const t = useTranslations('contact.form');
+
   const [formData, setFormData] = useState({
     nome: '',
     telefone: '',
@@ -20,9 +23,8 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('Enviado com sucesso!');
+    setStatus(t('success'));
     console.log(formData);
-    // Aqui você pode enviar os dados para uma API ou integração
     setFormData({ nome: '', telefone: '', email: '', cidade: '', mensagem: '' });
   };
 
@@ -31,7 +33,7 @@ export default function ContactForm() {
       <input
         type="text"
         name="nome"
-        placeholder="Qual seu nome?"
+        placeholder={t('name')}
         value={formData.nome}
         onChange={handleChange}
         className="w-full border border-gray-300 px-4 py-3 rounded-full text-sm outline-primary"
@@ -41,7 +43,7 @@ export default function ContactForm() {
         <input
           type="tel"
           name="telefone"
-          placeholder="Tel/Whats"
+          placeholder={t('phone')}
           value={formData.telefone}
           onChange={handleChange}
           className="flex-1 border border-gray-300 px-4 py-3 rounded-full text-sm outline-primary"
@@ -50,7 +52,7 @@ export default function ContactForm() {
         <input
           type="email"
           name="email"
-          placeholder="E-mail"
+          placeholder={t('email')}
           value={formData.email}
           onChange={handleChange}
           className="flex-1 border border-gray-300 px-4 py-3 rounded-full text-sm outline-primary"
@@ -60,7 +62,7 @@ export default function ContactForm() {
       <input
         type="text"
         name="cidade"
-        placeholder="Qual sua cidade?"
+        placeholder={t('city')}
         value={formData.cidade}
         onChange={handleChange}
         className="w-full border border-gray-300 px-4 py-3 rounded-full text-sm outline-primary"
@@ -68,7 +70,7 @@ export default function ContactForm() {
       />
       <textarea
         name="mensagem"
-        placeholder="Deixe sua mensagem..."
+        placeholder={t('message')}
         rows={4}
         value={formData.mensagem}
         onChange={handleChange}
@@ -79,7 +81,7 @@ export default function ContactForm() {
         type="submit"
         className="w-full cursor-pointer bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 rounded-full text-sm tracking-wide hover:opacity-90 transition"
       >
-        QUERO RECEBER CONTATO!
+        {t('submit')}
       </button>
       {status && <p className="text-green-600 text-sm text-center mt-2">{status}</p>}
     </form>

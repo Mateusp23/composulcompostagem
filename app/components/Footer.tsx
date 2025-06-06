@@ -1,9 +1,16 @@
+'use client';
+
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import Image from 'next/image';
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from 'react-icons/fa';
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
+  const t = useTranslations('footer');
+  const phones = (t.raw('contact.phones') as unknown) as string[];
+  const address = (t.raw('contact.address') as unknown) as string[];
+
   return (
     <footer className="bg-[#437E3B] text-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -24,35 +31,36 @@ export default function Footer() {
 
           {/* Serviços */}
           <div>
-            <h3 className="text-xl font-inter text-white font-bold mb-4">Serviços</h3>
+            <h3 className="text-xl font-inter text-white font-bold mb-4">{t('services.title')}</h3>
             <ul className="space-y-2 text-sm font-roboto opacity-90">
-              <li>Coleta e Logística</li>
-              <li>Tratamento em Compostagem</li>
-              <li>Produção de Fertilizante</li>
-              <li>Tecnologia e Consultoria</li>
+              {((t.raw('services.items') as unknown) as string[]).map((item: string) => (
+                <li key={item}>{item}</li>
+              ))}
             </ul>
           </div>
 
           {/* Contato */}
           <div>
-            <h3 className="text-xl font-inter text-white font-bold mb-4">Contato</h3>
+            <h3 className="text-xl font-inter text-white font-bold mb-4">{t('contact.title')}</h3>
             <ul className="space-y-3 text-sm font-roboto font-normal opacity-90">
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 text-orange mt-1" />
                 <div className="flex flex-col leading-tight gap-2">
-                  <span>(48) 9993-80221</span>
-                  <span>(48) 98829-0320</span>
+                  {phones.map((phone) => (
+                    <span key={phone}>{phone}</span>
+                  ))}
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-orange mt-1" />
-                <span>contato@composul.com</span>
+                <span>{t('contact.email')}</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-orange mt-1" />
                 <div className="leading-tight">
-                  <span>Servidão de acesso 505 BR 101KM 379</span><br />
-                  <span>Vila Nova, Içara/SC - CEP 88820-000</span>
+                  {address.map((line) => (
+                    <span key={line}>{line}<br /></span>
+                  ))}
                 </div>
               </li>
             </ul>
@@ -60,7 +68,7 @@ export default function Footer() {
 
           {/* Redes sociais */}
           <div>
-            <h3 className="text-xl font-inter text-white font-bold mb-4">Redes Sociais</h3>
+            <h3 className="text-xl font-inter text-white font-bold mb-4">{t('socials')}</h3>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/composulcompostagem" aria-label="Facebook" target='_blank' className="hover:text-white text-orange transition-colors duration-300">
                 <Facebook className="w-6 h-6" />
@@ -80,7 +88,7 @@ export default function Footer() {
 
         {/* Rodapé */}
         <div className="border-t border-orange mt-12 pt-8 text-center text-sm opacity-90">
-          <p>&copy; {new Date().getFullYear()} Composul. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Composul. {t('copyright')}</p>
         </div>
       </div>
     </footer>

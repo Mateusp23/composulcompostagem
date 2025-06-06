@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "partners": "Partners"
+  },
+  "hero": {
+    "title": "Sustainable Composting",
+    "subtitle": "Transforming waste into resources",
+    "cta": "Learn more"
+  },
+  "about": {
+    "title": "About Us",
+    "paragraphs": [
+      "We are a company with over 12 years of history, pioneers and specialists in mechanized collection, in the treatment of organic waste through composting, and in the production of high-quality Organic Compound Fertilizer, registered with the Ministry of Agriculture.",
+      "We serve various sectors, offering proper disposal in accordance with the National Solid Waste Policy (Law No. 12.305/2010), avoiding environmental liabilities and shared responsibility.",
+      "We represent UTV AG in South America, a German company with GORE® COVER technology: full process control, high efficiency, and low operating cost."
+    ],
+    "highlights": [
+      {
+        "title": "Pioneering",
+        "text": "12 years of experience in mechanized collection and organic waste treatment"
+      },
+      {
+        "title": "Legal Compliance",
+        "text": "We comply with all guidelines of the National Solid Waste Policy"
+      },
+      {
+        "title": "GORE ® Cover Technology",
+        "text": "We develop projects for waste treatment companies in Latin America in partnership with the German company UTV AG."
+      }
+    ],
+    "cta": "Learn more"
+  },
+  "services": {
+    "title": "Provided Services",
+    "description": "We operate throughout the composting chain: from collection to fertilizer production, with technology and specialized consulting.",
+    "cta": "Request a quote",
+    "list": [
+      {
+        "title": "Collection / Logistics",
+        "text": "Effective solutions for the mechanized collection of organic waste. We use licensed trucks and provide resistant, practical containers for proper temporary storage."
+      },
+      {
+        "title": "Composting Treatment",
+        "text": "Closed-system composting with German GORE® COVER technology, ensuring efficiency, full monitoring, and up to 97% reduction in odors and vectors."
+      },
+      {
+        "title": "Fertilizer Production",
+        "text": "Result of composting: organic fertilizer certified by the Ministry of Agriculture, widely used for vegetables, fruit trees, degraded areas, and landscaping."
+      },
+      {
+        "title": "GORE® COVER TECHNOLOGY AND CONSULTING",
+        "text": "Development of logistics projects and provision of GORE® COVER technology for managing and treating the organic fraction of MSW in partnership with UTV AG."
+      }
+    ]
+  },
+  "partners": {
+    "title": "Our Partners",
+    "description": "Companies and institutions that trust Composul to turn waste into sustainable solutions."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "phones": [
+      "(48) 9993-80221",
+      "(48) 98829-0320"
+    ],
+    "email": "contato@composul.com",
+    "address": "Access Road 505 BR 101KM 379\nVila Nova, Içara/SC - ZIP 88820-000",
+    "socialTitle": "Follow us on social media:",
+    "cta": "Contact us",
+    "form": {
+      "name": "What's your name?",
+      "phone": "Phone/WhatsApp",
+      "email": "Email",
+      "city": "What’s your city?",
+      "message": "Leave your message...",
+      "submit": "I WANT TO BE CONTACTED!",
+      "success": "Sent successfully!"
+    }
+  },
+  "footer": {
+    "services": {
+      "title": "Services",
+      "items": [
+        "Collection and Logistics",
+        "Composting Treatment",
+        "Fertilizer Production",
+        "Technology and Consulting"
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "phones": [
+        "(48) 9993-80221",
+        "(48) 98829-0320"
+      ],
+      "email": "contato@composul.com",
+      "address": [
+        "Servidão de acesso 505 BR 101KM 379",
+        "Vila Nova, Içara/SC - ZIP 88820-000"
+      ]
+    },
+    "socials": "Follow us",
+    "copyright": "All rights reserved."
+  }
+} 
