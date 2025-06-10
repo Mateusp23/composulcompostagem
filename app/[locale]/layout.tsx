@@ -2,23 +2,28 @@
 
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
+import { ReactNode } from 'react';
+
+type Params = Promise<{ locale: string }>;
 
 export default async function LocaleLayout({
   children,
   params,
 }: {
-  children: React.ReactNode;
-  params: { locale: string };
+  children: ReactNode;
+  params: Params;
 }) {
+  const { locale } = await params;
+
   let messages;
   try {
-    messages = (await import(`../../messages/${params.locale}/common.json`)).default;
+    messages = (await import(`../../messages/${locale}/common.json`)).default;
   } catch (error) {
     notFound();
   }
 
   return (
-    <NextIntlClientProvider locale={params.locale} messages={messages}>
+    <NextIntlClientProvider locale={locale} messages={messages}>
       {children}
     </NextIntlClientProvider>
   );
