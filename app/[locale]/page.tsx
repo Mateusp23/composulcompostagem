@@ -1,3 +1,5 @@
+'use-client'
+
 import { useTranslations } from 'next-intl';
 import AboutUs from "../components/AboutUs";
 import Contact from "../components/Contact";
