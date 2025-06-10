@@ -1,10 +1,9 @@
-// app/[locale]/layout.tsx
-
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
-import { ReactNode } from 'react';
 import { Inter, Roboto } from 'next/font/google';
+import { ReactNode } from 'react';
 
+// Fontes (mantém igual ao root layout)
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
@@ -18,19 +17,25 @@ const roboto = Roboto({
   display: 'swap',
 });
 
-type Props = {
+// AQUI: tipagem correta exigida pelo App Router
+export async function generateStaticParams() {
+  return [{ locale: 'pt' }, { locale: 'en' }, { locale: 'es' }];
+}
+
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
   children: ReactNode;
   params: { locale: string };
-};
-
-export default async function LocaleLayout({ children, params }: Props) {
+}) {
   const { locale } = params;
 
-  let messages: Record<string, string>;
+  let messages;
   try {
     messages = (await import(`../../messages/${locale}/common.json`)).default;
   } catch (error) {
-    return notFound(); // importante usar "return" aqui
+    notFound(); // Usa return internamente
   }
 
   return (
