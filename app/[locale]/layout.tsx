@@ -1,9 +1,8 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { notFound } from 'next/navigation';
 import { Inter, Roboto } from 'next/font/google';
 import { ReactNode } from 'react';
+import { NextIntlClientProvider } from 'next-intl';
+import { notFound } from 'next/navigation';
 
-// Fontes (mantém igual ao root layout)
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
@@ -17,8 +16,7 @@ const roboto = Roboto({
   display: 'swap',
 });
 
-// AQUI: tipagem correta exigida pelo App Router
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return [{ locale: 'pt' }, { locale: 'en' }, { locale: 'es' }];
 }
 
@@ -35,7 +33,7 @@ export default async function LocaleLayout({
   try {
     messages = (await import(`../../messages/${locale}/common.json`)).default;
   } catch (error) {
-    notFound(); // Usa return internamente
+    notFound(); // para lidar com locale inválido
   }
 
   return (
