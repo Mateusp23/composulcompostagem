@@ -149,6 +149,7 @@ export default function Services() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           href="https://wa.me/5548999380221?text=Olá%2C%20gostaria%20de%20falar%20com%20a%20Composul!"
+          target='_blank'
           className="inline-block bg-gradient-to-r from-primary to-secondary text-white text-base font-medium px-8 py-3 rounded-full shadow-md transition-transform duration-300"
         >
           {t('cta')}
