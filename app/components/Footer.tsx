@@ -86,9 +86,27 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Rodapé */}
-        <div className="border-t border-orange mt-12 pt-8 text-center text-sm opacity-90">
-          <p>&copy; {new Date().getFullYear()} Composul. {t('copyright')}</p>
+        {/* Rodapé + Desenvolvido por */}
+        <div className="border-t border-orange mt-12 pt-8 flex flex-col md:flex-row items-center justify-between text-sm opacity-90 gap-4">
+          <p className="text-center md:text-left w-full md:w-auto">
+            &copy; {new Date().getFullYear()} Composul. {t('copyright')}
+          </p>
+
+          <a
+            href="https://www.kangostudio.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-[#F56A84] hover:text-white transition"
+          >
+            <Image
+              src="/kango-icon.png" // substitua pelo path real do ícone rosa
+              alt="Kango"
+              width={22}
+              height={22}
+              className="object-contain"
+            />
+            <span className="text-sm font-medium text-white hover:text-[#F56A84]">{t('devBy') }</span>
+          </a>
         </div>
       </div>
     </footer>

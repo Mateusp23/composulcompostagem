@@ -79,7 +79,9 @@
       "message": "Deja tu mensaje...",
       "submit": "¡QUIERO SER CONTACTADO!",
       "success": "¡Enviado con éxito!"
-    }
+    },
+    "nameTitle": "Composul",
+    "nameSubtitle": "Soluciones Sostenibles"
   },
   "footer": {
     "services": {
@@ -104,6 +106,7 @@
       ]
     },
     "socials": "Redes Sociales",
-    "copyright": "Todos los derechos reservados."
+    "copyright": "Todos los derechos reservados.",
+    "devBy": "Desarrollado por Kango Studio"
   }
 } 

@@ -79,7 +79,9 @@
       "message": "Deixe sua mensagem...",
       "submit": "QUERO RECEBER CONTATO!",
       "success": "Enviado com sucesso!"
-    }
+    },
+    "nameTitle": "Composul",
+    "nameSubtitle": "Soluções Sustentáveis"
   },
   "footer": {
     "services": {
@@ -94,7 +96,7 @@
     "contact": {
       "title": "Contato",
       "phones": [
-        "(48) 9993-80221",
+        "(48) 99938-0221",
         "(48) 98829-0320"
       ],
       "email": "contato@composul.com",
@@ -104,6 +106,7 @@
       ]
     },
     "socials": "Redes Sociais",
-    "copyright": "Todos os direitos reservados."
+    "copyright": "Todos os direitos reservados.",
+    "devBy": "Desenvolvido por Kango Studio"
   }
 } 
