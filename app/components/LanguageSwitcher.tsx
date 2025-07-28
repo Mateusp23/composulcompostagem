@@ -54,6 +54,7 @@ export default function LanguageSwitcher() {
           text-sm bg-white border border-gray-300 
           rounded-full shadow-sm 
           hover:bg-gray-50 transition-colors
+          cursor-pointer
         "
       >
         <Globe className="w-4 h-4 text-gray-500" />
