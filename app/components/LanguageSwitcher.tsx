@@ -47,10 +47,17 @@ export default function LanguageSwitcher() {
     <div className="relative inline-block text-left z-50" ref={dropdownRef}>
       <button
         onClick={() => setOpen(!open)}
-        className="flex cursor-pointer items-center gap-2 px-3 py-1.5 text-sm bg-white border border-gray-300 rounded-full shadow-sm hover:bg-gray-50 transition-colors"
+        className="
+          flex items-center gap-2
+          px-3 py-1.5
+          min-w-[60px] md:min-w-[80px]  /* Garante espaço para o texto */
+          text-sm bg-white border border-gray-300 
+          rounded-full shadow-sm 
+          hover:bg-gray-50 transition-colors
+        "
       >
         <Globe className="w-4 h-4 text-gray-500" />
-        <span className="uppercase">{locale}</span>
+        <span className="uppercase block text-gray-500">{locale}</span>
       </button>
 
       <AnimatePresence>
@@ -59,8 +66,20 @@ export default function LanguageSwitcher() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.15 }}
-            className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg overflow-hidden"
+            transition={{ duration: 0.2 }}
+            className="
+          absolute 
+          left-0 md:right-0 
+          mt-2 
+          w-44 
+          bg-white 
+          border border-gray-200 
+          rounded-md 
+          shadow-lg 
+          overflow-auto 
+          max-h-48 
+          z-[999]
+        "
           >
             <ul className="py-1 text-sm text-gray-700">
               {languages.map(({ code, label }) => (
@@ -81,5 +100,6 @@ export default function LanguageSwitcher() {
         )}
       </AnimatePresence>
     </div>
+
   );
 }
