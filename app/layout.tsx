@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Composul Compostagem",
     description: "Soluções sustentáveis para o tratamento de resíduos orgânicos.",
-    url: "https://composul.com.br",
+    url: "https://composul.com",
     siteName: "Composul",
     locale: "pt_BR",
     type: "website",
