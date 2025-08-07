@@ -15,7 +15,7 @@ export default function FloatingWhatsApp() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className="fixed z-[999] bottom-6 right-6 bg-secondary text-white p-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
     >
-      <FaWhatsapp className="w-6 h-6" />
+      <FaWhatsapp className="w-8 h-8" />
     </motion.a>
   );
 }
