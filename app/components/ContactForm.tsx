@@ -21,11 +21,27 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus(t('success'));
-    console.log(formData);
-    setFormData({ nome: '', telefone: '', email: '', cidade: '', mensagem: '' });
+    setStatus('Enviando...');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus(t('success'));
+        setFormData({ nome: '', telefone: '', email: '', cidade: '', mensagem: '' });
+      } else {
+        setStatus('Erro ao enviar. Tente novamente.');
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus('Erro ao enviar. Verifique sua conexão.');
+    }
   };
 
   return (
