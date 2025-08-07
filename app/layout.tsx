@@ -1,6 +1,5 @@
 // app/layout.tsx
-
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
 
@@ -58,9 +57,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Composul Compostagem",
     description: "Soluções sustentáveis para resíduos orgânicos.",
-    creator: "@composul", // Se houver Twitter
+    creator: "@composul",
   },
-  viewport: "width=device-width, initial-scale=1.0",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -68,11 +66,17 @@ export const metadata: Metadata = {
   },
 };
 
+// ✅ Mover viewport para export separado
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+};
+
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="pt-BR">
       <body
